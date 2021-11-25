@@ -1,0 +1,90 @@
+# DSA
+//BinaryTree
+class BinaryTree
+{
+	Node root;
+	
+	static class Node{
+		int data;
+		Node left,right;
+		
+		
+		
+		Node(int d)
+		{
+			data=d;
+			left=right=null;
+		}
+		
+		BinaryTree()
+		{
+			root=null;
+		}
+		BinaryTree(int d)
+		{
+			root=new Node(d);			
+		}
+		
+		void inorder(Node node)
+		{
+			if(node==null)
+			return;
+		
+		inorder(node.left);
+		System.out.printn(node.data+" ");
+			inorder(node.right);
+		}
+		
+		void Preorder(Node node)
+	{
+		if(node == null)
+			return;
+		System.out.print(node.data+ " ");
+		Preorder(node.left);
+		Preorder(node.right);
+		
+	}
+	void Postorder(Node node)
+	{
+		if(node == null)
+			return;
+		Postorder(node.left);
+		Postorder(node.right);
+		System.out.print(node.data+" ");
+	}
+	void inorder()
+	{
+		inorder(root);
+	}
+	void Preorder()
+	{
+		Preorder(root);
+	}
+	void Postorder()
+	{
+		Postorder(root);
+	}
+		
+	}
+	
+	public static void main()
+	{
+		BinaryTree tree=new BinaryTree();
+		tree.root=new Node(10);
+		tree.root.left =new Node(20);
+		tree.root.right=new Node(30);
+		
+		tree.root.left.left=new Node(40);
+		tree.root.left.right = new Node(55);
+		
+		System.out.println("Inorder Traversal : ");
+		tree.inorder();
+		System.out.println();
+		System.out.println("Preorder Traversal : ");
+		tree.Preorder();
+		System.out.println();
+		System.out.println("Postorder Traversal : ");
+		tree.Postorder();
+		
+	}
+}
