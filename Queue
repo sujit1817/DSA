@@ -1,0 +1,58 @@
+# DSA
+Q1: What are some common scenarios where queues are used?List some Queue real-life applications
+A queue of people at ticket-window: The person who comes first gets the ticket first.
+The person who is coming last is getting the tickets in last.
+
+Q2: What is Queue? 
+ a queue is a collection of entities that are maintained in a sequence and can be modified by the addition of entities at 
+one end of the sequence and the removal of entities from the other end of the sequence.
+(addition from rear end && deletion from front end only)
+
+Q3: Why and when should I use Stack or Queue data structures instead of Arrays/Lists? 
+
+
+Q4: What is Complexity Analysis of Queue operations? 
+Enqueue: O(1)
+Dequeue: O(1)
+Size: O(1)
+
+Q5: What are some types of Queue? 
+dequeue
+circular
+priority
+simple
+
+Q6: What are benefits of Circular Queue? 
+Circular Queues offer a quick and clean way to store FIFO data with a maximum size. 
+Conserves memory as we only store up to our capacity
+
+Q7: Name some Queue implementations and compare them by efficiency of operations 
+
+
+
+Q8: Compare Array-Based vs List-Based implementation of Queues(can be done later) 
+
+Q9: How to manage Full Circular Queue event? 
+
+
+
+Q10: Name most efficient way to implement Stack and Queue together How do I convert a Queue into the Stack? 
+Implement Stack using Two Queues (with efficient push) 
+
+
+
+Q11: Implement a Queue using two Stacks How to implement a Queue using one stack
+
+
+
+Q12.What is a Priority Queue where is it used give example?
+a priority queue is an abstract data type similar to a regular queue or stack data structure in which each element additionally 
+has a "priority" associated with it. In a priority queue, an element with high priority is served before an element with low priority.
+ex.Dijkstra's algorithm
+for implementing stack
+for load balancing and interrupt handling in an operating system
+
+
+Q13.What is a Dequeue?
+a double-ended queue is an abstract data type that generalizes a queue, 
+for which elements can be added to or removed from either the front or back.
