@@ -1,0 +1,87 @@
+# DSA
+Q1 What is an Array?
+Java array is an object which contains elements of a similar data type.
+
+Q2 How do you declare an Array in java?
+its a two step process
+1) Declare a variable of the desired array type
+2)must allocate the memory that will hold the array, using new, and assign it to the array variable.
+
+
+Q3 What is the default value of Array for different data types?
+ For primitive types like int , long , float the default value are zero ( 0 or 0.0 )
+double 0.0
+
+Q4 Can you change size of Array in java after creation?
+If you create an array by initializing its values directly, the size will be the number of elements in it. 
+Thus the size of the array is determined at the time of its creation or, initialization once 
+it is done you cannot change the size of the array.
+
+Q5 Can you pass the negative number in Array size?
+No, you cannot use a negative integer as size.
+
+Q6 Can you declare an Array without Array size?
+yes, we can // how to answer//
+
+Q7 Where does Array stored in JVM memory ?
+heap area, because while allocating memory we use new keyword.
+
+Q9 What is ArrayStoreException ? When this exception is thrown ?
+ArrayStoreException is thrown at runtime in Java when an attempt is made to store the incorrect type of object in an array of objects. 
+Since ArrayStoreException is an unchecked exception, it isn't typical to handle or declare it.
+//uncheched exception --
+
+Q10 What is the difference between ArrayStoreException andArrayOutOfBoundsException ?
+ArrayStoreException is thrown if you are trying to add incompatible data type. 
+For example, if you try to add an integer object to String Array, then ArrayStoreException is thrown. 
+ArrayOutOfBoundsException is thrown when an attempt is made to access the Array with illegal index.
+The index is either negative or greater than or equal to the size of the array
+
+Q11 What are the advantages of Array ?
+1.Arrays represent multiple data items of the same type using a single name.
+2.In arrays, the elements can be accessed randomly by using the index number.
+3.Arrays allocate memory in contiguous memory locations for all its elements. Hence there is no chance of extra memory being allocated
+in case of arrays. This avoids memory overflow or shortage of memory in arrays.
+
+Q12 What are the disadvantages of Array?
+1.The number of elements to be stored in an array should be known in advance.
+An array is a static structure (which means the array is of fixed size). Once declared the size of the array cannot be modified. 
+The memory which is allocated to it cannot be increased or decreased.
+2.Insertion and deletion are quite difficult in an array as the elements are stored in consecutive memory locations and 
+the shifting operation is costly.
+3.Allocating more memory than the requirement leads to wastage of memory space and less allocation of memory also leads to a problem.
+
+Q15 Write a program to print elements of Array ?
+public class Array {
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+
+for(int i=0;i<5;i++)
+{
+            System.out.println(array[i]);
+        }
+       /* for (int element: array) {
+            System.out.println(element);
+        } */
+    }
+}
+
+Q18 Which is legal int[] arr or int arr[] ?
+both
+
+Q19 Write a program to throw ArrayOutOfBoundsException?
+public class Array {
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+
+for(int i=0;i<6;i++)
+{
+            System.out.println(array[i]);
+        }
+       /* for (int element: array) {
+            System.out.println(element);
+        } */
+    }
+}
