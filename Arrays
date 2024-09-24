@@ -12,8 +12,70 @@ or int[] numbers;
 #To create an array, you need to allocate memory for it using the new keyword
 numbers = new int[5]; // array of size 5
 
-index start from zero.
+index starts from zero.
 
-#to access an element we need to use index
+#to access an element we need to use the index.
 #to find the length we can use the length property
 int size=numbers.length; //
+
+///1. Program to find min and max in an array
+public class Main{
+    public static int largestInArray(int arr[]){
+	    int Max = arr[0];
+	      for(int i=0; i<arr.length;i++){
+ 	        if(Max < arr[i]){
+ 	           Max = arr[i];
+	        }
+	    }
+	    return Max;
+	}
+	
+	public static int smallestInArray(int arr[]){
+	    int Min = arr[0];
+	      for(int i=0; i<arr.length;i++){
+ 	        if(Min > arr[i]){
+ 	           Min = arr[i];
+	        }
+	    }
+	    return Min;
+	}
+    
+	public static void main(String[] args) {
+	   // int key=10;
+	    int arr[] = {4,5,15,8,2,12,14};
+	    
+	    int largest = largestInArray(arr);
+	    System.out.println("largest value is "+largest);
+	    
+	    int smallest = smallestInArray(arr);
+	    System.out.println("largest value is "+smallest);
+// 	    int index = linearSearch(arr, key);
+// 		System.out.println(index);
+	}
+
+//2. Program to print pairs in array
+public class Main
+{
+    public static void printPairs(int numbers[]){
+        for(int i=0; i<numbers.length;i++){
+            int curr= numbers[i];
+            for(int j=i+1; j<numbers.length;j++){
+                System.out.print("("+curr+","+numbers[j]+") ");
+            }
+            System.out.println();
+        }
+    }
+    
+	public static void main(String[] args) {
+	 int numbers[]={2, 4, 6, 8, 10};
+	 printPairs(numbers);
+	}
+	
+}
+//
+(2,4) (2,6) (2,8) (2,10) 
+(4,6) (4,8) (4,10) 
+(6,8) (6,10) 
+(8,10)
+pairs array
+
