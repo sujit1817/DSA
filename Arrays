@@ -1,0 +1,19 @@
+Arrays are the fundamental strutures in java that allow us to store multiple values of the same type in a single variable.
+The elements in an array are stored in a contiguous memory location.
+
+int numbers[] ={1,2,3,4,5};
+
+*Array Declaration:-
+
+#To declare an array in Java, use the following syntax:
+int numbers[];
+or int[] numbers;
+
+#To create an array, you need to allocate memory for it using the new keyword
+numbers = new int[5]; // array of size 5
+
+index start from zero.
+
+#to access an element we need to use index
+#to find the length we can use the length property
+int size=numbers.length; //
