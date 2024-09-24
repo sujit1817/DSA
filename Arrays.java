@@ -53,7 +53,7 @@ public class Main{
 // 		System.out.println(index);
 	}
 
-//2. Program to print pairs in array
+//2. Program to print pairs in an array
 public class Main
 {
     public static void printPairs(int numbers[]){
@@ -78,4 +78,50 @@ public class Main
 (6,8) (6,10) 
 (8,10)
 pairs array
+
+//3. print subArrays
+//continuous part of Array
+//for array of size n there are n(n+1)/2 subArrays
+public class Main
+{
+    public static void subArrays(int numbers[]){
+        
+        for(int i=0;i<numbers.length;i++){
+            int start=i;
+            for(int j=i;j<numbers.length ;j++){
+                int end=j;
+                for(int k=start;k<=end;k++){// print start to end   
+                    System.out.print(numbers[k]+" ");
+                }
+                 System.out.println();
+            }
+            System.out.println();
+        }       
+    }
+	public static void main(String[] args) {
+	    int numbers[]={2,4,6,8,10};
+	    subArrays(numbers);
+	}
+}
+/*
+2 
+2 4 
+2 4 6 
+2 4 6 8 
+2 4 6 8 10 
+
+4 
+4 6 
+4 6 8 
+4 6 8 10 
+
+6 
+6 8 
+6 8 10 
+
+8 
+8 10 
+
+10
+*/
 
