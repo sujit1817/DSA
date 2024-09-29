@@ -125,3 +125,78 @@ public class Main
 10
 */
 
+//sum of subarrays
+public class Main
+{
+    public static void printSubArraysSum(int numbers[]){
+        int currSum=0;
+        for(int i=0; i<numbers.length;i++){
+            int start = i;
+            for(int j=i;j<numbers.length;j++){
+                int end=j;
+                currSum=0;//so that next sum do not include the older sum
+                for(int k= start; k<=end;k++){
+                    currSum+=numbers[k];
+                }
+                System.out.println(currSum);
+             }
+            }
+        }
+        
+    }
+    
+	public static void main(String[] args) {
+		int numbers[] = {2,4,6,8,10};
+		printSubArraysSum(numbers);
+	}
+}
+/*	
+2
+6
+12
+20
+30
+4
+10
+18
+28
+6
+14
+24
+8
+18
+10
+*/
+
+//max sum of subarrays
+public class Main
+{
+    public static void printMaxSubArraysSum(int numbers[]){
+        int currSum=0;
+        int maxSum=Integer.MIN_VALUE;
+        for(int i=0; i<numbers.length;i++){
+            int start = i;
+            for(int j=i;j<numbers.length;j++){
+                int end=j;
+                currSum=0;
+                for(int k= start; k<=end;k++){
+                    //subArray sum
+                    currSum+=numbers[k];
+                }
+             //   System.out.println(currSum);
+                 if(maxSum<currSum){
+                     maxSum=currSum;
+                 }
+            }
+        }
+        System.out.println("max sum = "+maxSum);
+    }
+    
+	public static void main(String[] args) {
+		int numbers[] = {2,4,6,8,10};
+		printMaxSubArraysSum(numbers);
+	}
+}
+/*
+max sum = 30
+*/
