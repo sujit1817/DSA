@@ -20,6 +20,29 @@ int size=numbers.length; //
 
 ///1. Program to find min and max in an array
 public class Main{
+/*
+//max 
+   public static void maxArray(int arr[]){
+       int max=arr[0];
+       for(int i=1;i<arr.length;i++){
+              if(arr[i]>max){
+                  max = arr[i];
+                }
+       }
+       System.out.println("max :"+max);
+   }
+    
+    //min
+    public static void minArray(int arr[]){
+       int min=arr[0];
+       for(int i=1;i<arr.length;i++){
+              if(arr[i]<min){
+                  min = arr[i];
+                }
+       }
+       System.out.println("min :"+min);
+   }
+*/	
     public static int largestInArray(int arr[]){
 	    int Max = arr[0];
 	      for(int i=0; i<arr.length;i++){
