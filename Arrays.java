@@ -1,5 +1,8 @@
 Arrays are the fundamental strutures in java that allow us to store multiple values of the same type in a single variable.
 The elements in an array are stored in a contiguous memory location.
+//1. linear data structure.
+//2. homogeneous(multiple values of the same type in a single variable).
+//3. stored in a contiguous memory location.
 
 int numbers[] ={1,2,3,4,5};
 
@@ -223,3 +226,108 @@ public class Main
 /*
 max sum = 30
 */
+
+//Qn. print odd numbers 
+public class Main
+{
+    public static int[] removeEven(int[] arr){
+     int odd=0;
+     for(int i=0;i<arr.length;i++){
+         if(arr[i]%2!=0){
+             odd++;
+            }
+       }
+    int result[]=new int[odd];
+    int idx=0;
+    for(int i=0;i<arr.length;i++){
+         if(arr[i]%2!=0){
+             result[idx]=arr[i];
+            idx++;
+         }
+    }
+    return result;
+   // printArray(result); 
+    }
+    
+    public static void printArray(int result[]){
+        for(int oddEle : result){
+            System.out.print(oddEle+" ");
+        }
+    } 
+    
+	public static void main(String[] args) {
+	int[] arr={5,4,3,8,9};
+	int result[]=removeEven(arr);
+	printArray(result);
+	}
+}
+
+//Qn. reverse an array
+public class Main
+{
+  public static void reverseArray(int arr[],int start,int end){
+      
+      while(start<end){
+      int temp=arr[start];
+      arr[start]=arr[end];
+      arr[end]=temp;
+      start++;
+      end--;
+      }
+      printArray(arr);
+  }
+  
+  public static void printArray(int arr[]){
+      for(int rev : arr){
+          System.out.print(rev+" ");
+      }
+  }
+    
+	public static void main(String[] args) {
+	int[] arr={5,4,3,8,9};
+	reverseArray(arr,0, arr.length-1);
+	}
+}
+
+//Qn. move zeros to the end of an array
+public class Main
+{
+    public static void printArray(int arr[]){
+      for(int moveZero : arr){
+          System.out.print(moveZero+" ");
+      }
+    }
+    
+   public static void moveZerosToEnd(int arr[]){
+     for(int i=0;i<arr.length;i++){
+        for(int j=i+1;j<arr.length;j++){
+           if(arr[i]==0){
+           int temp=arr[i];
+           arr[i]=arr[j];
+           arr[j]=temp;
+           }   
+        }
+     }
+     printArray(arr);
+    }
+	/*
+	 public static void moveZerosToEnd(int arr[]){
+       int j=0;
+     for(int i=0;i<arr.length;i++){
+           if(arr[i]!=0 && arr[j]==0){
+           int temp=arr[i];
+           arr[i]=arr[j];
+           arr[j]=temp;
+           } if(arr[j]!=0){
+               j++;
+           }
+     }
+     printArray(arr);
+    }
+	*/
+    
+	public static void main(String[] args) {
+	int[] arr={5,4,0,3,0,8,9};
+	moveZerosToEnd(arr);
+	}
+}
