@@ -72,9 +72,10 @@ public class Main
 		int max = Integer.MIN_VALUE;// negative Infinity
 		
 		for(int i = 0; i<list.size(); i++){
-		    if(list.get(i)>max){
-		        max=list.get(i);
-		    }
+		  //  if(list.get(i)>max){
+		  //      max=list.get(i);
+		  //  }
+		  max = Math.max(max,list.get(i));
 		}
 		System.out.println("Max element in above ArrayList is : "+max);
 	}
