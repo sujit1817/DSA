@@ -91,5 +91,118 @@ Here, the next of the last node consists of the address of the first node.
 
 Here, in addition to the last node storing the address of the first node, the first node will also store the address of the last node.
 
+//Linked list operartions
+package com.collections;
 
+public class LinkedList {
+	public static class Node {
+		int data;
+		Node next;
+
+		public Node(int data) {
+			this.data = data;
+			this.next = null;
+		}
+	}
+
+	public static Node head;
+	public static Node tail;
+	public static int size=0;
+
+	public void addFirst(int data) {
+		Node newNode = new Node(data);
+		size++;
+		if (head == null) {
+			head = tail = newNode;
+			return;
+		}
+
+		newNode.next = head;
+		head = newNode;
+	}
+	
+	public void addLast(int data) {
+		Node newNode = new Node(data);
+		size++;
+		if (head == null) {
+			head = tail = newNode;
+			return;
+		}
+
+		tail.next = newNode;
+		tail = newNode;
+	}
+	
+	public void add(int index, int data) {
+		if(index == 0) {
+			addFirst(data);
+			return;
+		}
+		Node newNode = new Node(data);
+		size++;
+		Node temp = head;
+		int i=0;
+		while(i<index-1){
+			temp = temp.next;
+			i++;
+		}
+		newNode.next = temp.next;
+		temp.next = newNode;
+	}
+	
+	public void print() {
+		if (head == null) {
+			return;
+		}
+		Node temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + "->");
+			temp = temp.next;
+		}
+		System.out.println("null");
+	}
+	
+	public int removeFirst() {
+		if(size == 0) {
+			System.out.println("Linked List is empty");
+			return Integer.MIN_VALUE;
+		}else if(size == 1) {
+			int val = head.data;
+			head = tail = null;
+			size=0;
+			return val;
+		}
+		
+		int val = head.data;
+		head = head.next;
+		size--;
+		return val;
+	}
+	
+	public static void main(String[] args) {
+		LinkedList list = new LinkedList();
+		list.print();
+		list.addFirst(1);
+		list.print();
+		list.addFirst(2);
+		list.print();
+		list.addFirst(3);
+		list.print();
+		list.addFirst(4);
+		list.print();
+		
+		list.addLast(5);
+		list.print();
+		list.addLast(6);
+		list.print();
+		
+		list.add(4,0);
+		list.print();
+		
+		System.out.println("size : "+list.size);
+		
+		list.removeFirst();
+		list.print();
+	}
+}
 
