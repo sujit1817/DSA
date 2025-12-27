@@ -45,3 +45,40 @@ public class TwoSum {
     }
 }
 
+
+//Day 2
+public class MoveZeros
+{
+    public static void moveZerosToTheEnd(int nums[]){
+	    int j = 0;
+	
+    	for(int i = 0 ; i < nums.length; i++){
+    		if(nums[i]!=0){
+    			int temp = nums[i];
+    			nums[i] = nums[j];
+    			nums[j] = temp;
+    			j++;
+    		}
+    	}
+    }
+    
+	public static void main(String[] args) {
+	    int nums[] = {0, 1, 0, 3, 12};
+        moveZerosToTheEnd(nums);
+
+        for (int num : nums) {
+            System.out.print(num + " ");
+        }
+	}
+}
+/*
+0  1  0  3  12
+
+
+nums[i] = 0
+i++
+
+nums[i]! = 0
+int temp[]
+nums[j] = nums[i];
+*/
