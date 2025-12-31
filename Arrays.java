@@ -331,3 +331,305 @@ public class Main
 	moveZerosToEnd(arr);
 	}
 }
+
+//Problem 1: Count how many numbers are even in an array//
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {2, 5, 6, 9, 10};
+	    int count =0;
+	    
+	    for(int num : arr){
+	        if(num%2==0){
+	        count++;
+	        }
+	    }
+	    System.out.print(count);
+	}
+}
+
+//Problem 2: Count numbers greater than 10
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {12, 5, 16,15 , 10};
+	    int count =0;
+	    
+	    for(int num : arr){
+	        if(num>10){
+	        count++;
+	        }
+	    }
+	    System.out.print(count);
+	}
+}
+
+//Problem 3: Sum of all positive numbers in the array
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {-1, 4, -3, 9};
+	    int sum =0;
+	    
+	    for(int num : arr){
+	        if(num>0){
+	        sum+=num;
+	        }
+	    }
+	    System.out.print(sum);
+	}
+}
+
+//Problem 6: Count how many numbers are perfect squares
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {4, 10, 16, 17};
+	    int count =0;
+	    
+	    for(int num : arr){
+	      int root = (int)Math.sqrt(num);
+	      if(root*root == num){
+	          count++;
+	      }
+	    }
+	    System.out.print(count);
+	}
+}
+
+//Problem 7 : Count how many numbers have exactly 3 digits (100 to 999)
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {5, 102, 555, 78, 999};
+	    int count =0;
+	    
+	    for(int num : arr){
+	      if(num>=100 && num <= 999){
+	          count++;
+	      }
+	    }
+	    System.out.print(count);
+	}
+}
+
+
+//Problem 13 — Count elements that appear exactly once
+import java.util.*;
+
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int arr[] = {1, 2, 2, 3, 4, 4, 5};
+	   Map<Integer, Integer> map = new HashMap<>();
+	   
+	   for(int num : arr){
+	       map.put(num, map.getOrDefault(num, 0) + 1);
+	   }
+	  int count = 0; 
+	   for(int key : map.keySet()){
+	        if (map.get(key) == 1) {
+                count++;
+            }
+	   }
+	   
+	   
+	    System.out.print(count);
+	}
+}
+
+
+//14 — Check if two arrays are equal (ignoring order)
+import java.util.*;
+
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int arr1[] = {1, 2, 3, 4};
+        int arr2[] = {4, 3, 2, 1};
+	 
+	 if(arr1.length!=arr2.length){
+	      System.out.println(false);
+	     return;
+	 }
+	 
+	 Map<Integer, Integer> freq = new HashMap<>();
+	 for(int num : arr1){
+	     freq.put(num, freq.getOrDefault(num, 0)+1);
+	 }
+	 
+	 for(int num : arr2){
+	     if(!freq.containsKey(num)){
+	          System.out.println(false);
+	         return;
+	     }
+	     freq.put(num, freq.get(num)-1);
+	 }
+	  for (int f : freq.values()) {
+            if (f != 0) {
+                System.out.println(false);
+                return;
+            }
+        }
+        System.out.println(true);
+	}
+}
+
+//15 — Check if two arrays are reverses of each other
+import java.util.*;
+
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int arr1[] = {1, 2, 3, 4};
+        int arr2[] = {4, 3, 2, 1};
+	 int n = arr1.length;
+	 if(arr1.length!=arr2.length){
+	      System.out.println(false);
+	     return;
+	 }
+	 for(int i = 0; i< n ; i++){
+	     if(arr1[i]!=arr2[n-i-1]){
+	         System.out.print(false);
+	      return;   
+	     }
+	 }
+	 System.out.print(true);
+	}
+}
+
+//Problem 16 — Find the element that appears the maximum number of times (most frequent element)
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {1, 2, 2, 3, 3, 3, 4};
+	    Map<Integer, Integer>  freq = new HashMap<>();
+		
+		for(int num : arr){
+		    freq.put(num, freq.getOrDefault(num, 0)+1);
+		}
+		int maxfreq = 0; 
+	    int	mostFrequentElement = -1;
+		for(Map.Entry<Integer, Integer> entry : freq.entrySet()){ 
+		     int element = entry.getKey();
+             int count = entry.getValue();
+             
+              if (count > maxfreq) {
+                    maxfreq = count;
+                    mostFrequentElement = element;
+                }
+		} 
+		System.out.println(maxfreq);
+		System.out.println(mostFrequentElement);
+	}
+}
+
+
+//Problem 17 — Count how many elements appear exactly twice
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {1, 2, 2, 3, 3, 3, 4, 4};
+	    Map<Integer, Integer>  freq = new HashMap<>();
+		
+		for(int num : arr){
+		    freq.put(num, freq.getOrDefault(num, 0)+1);
+		}
+	
+	    int count = 0;
+		for(Map.Entry<Integer, Integer> entry : freq.entrySet()){ 
+		  if(entry.getValue()==2){
+		     System.out.print(entry.getKey()+" ");
+		      count++;
+		  }
+		}
+		System.out.println();
+		System.out.print(count);
+		
+	}
+}
+
+
+//Problem 20 — Count how many pairs in the array sum up to a given target
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {1, 5, 7, -1, 5};
+        int target = 6;
+        
+        Map<Integer, Integer> freq = new HashMap<>();
+        int count = 0;
+        for(Map.Entry<Integer, Integer> map = freq.entrySet()){
+            
+            int complement = target - arr[i];
+            if(freq.containsKey(complement)){
+                System.out.println("complement : "+complement+" num : "+arr[i]+" ");
+                count++;
+            }
+            freq.put(arr[i], freq.getOrDefault(arr[i], 0)+1);
+        }
+        System.out.println();
+		System.out.println("count"+count);
+	}
+}
+
+//Problem 22:Find the first repeating element in an array
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {10, 5, 3, 4, 3, 5, 6};
+       
+        
+        Set<Integer> set1 = new LinkedHashSet<>();
+        
+        for(int num : arr){
+            if(set1.contains(num)){
+             System.out.print("num : "+num);
+             return;
+            }
+            set1.add(num);
+            
+        }
+        
+	}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int arr[] = {1, -2, 6,-1 , 3};
+       
+       int maxSum = 0;
+        for(int i = 0;i < arr.length; i++){
+            for(int j=i;j<arr.length;j++){
+               int currentSum =0; 
+                for(int k = i ; k<=j;k++){
+                    System.out.print(arr[k]+" ");
+                    currentSum+=arr[k];
+                }
+                System.out.println();
+                System.out.println("currentSum "+currentSum);
+                if(currentSum>maxSum){
+                    maxSum=currentSum;
+                }
+                System.out.println();
+            }
+        }
+        System.out.println(maxSum);
+        
+	}
+}
+
